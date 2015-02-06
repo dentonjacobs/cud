@@ -11,13 +11,14 @@ var metadataMarker = '@@';
 var inboxPath = './inbox/';
 var draftsPath = './drafts/';
 var siteMetadata = {};
+var markdown_ext = '.md';
 
 var twitterOptions  = {
     consumer_key:        'kRiC56bX0UA04za5aeEmGw',
     consumer_secret:     'Kk2sJJi7TzLQJdmuh1TLtFSIf7fJOYgsdxARrPU',
     access_token:        '15998762-dIpvCIeWZD5udRwz5gQuX1oWiToPKjZ1Ze6TPNlw8',
     access_token_secret: 'MnOPrgxQhasLV3da0Ug0GI2WjAVzHnjnzzpnM8yO0',
-    callback: ''
+    callback: 			 ''
 };
 
 var watchOptions = {
@@ -57,7 +58,7 @@ function parseMetadata(lines) {
 
 // Gets all the lines in a post and separates the metadata from the body
 function getLinesFromPost(file) {
-    file = file.endsWith('.md') ? file : file + '.md';
+    file = file.endsWith(markdown_ext) ? file : file + markdown_ext;
     var data = fs.readFileSync(file, {encoding: 'UTF8'});
 
     // Extract the pieces
@@ -68,9 +69,39 @@ function getLinesFromPost(file) {
     return {metadata: metadataLines, body: body};
 }
 
-function testFile(file) {
+function buildShortLink(metadata) {
+	var shortLink = '';
+	var type = metadata['PostType'];
+
+	switch(type) {
+		case 'audio':
+			shortLink += '/a/';
+			break;
+		case 'article':
+			shortLink += '/b/';
+			break;
+		case 'event':
+			shortLink += '/e/';
+			break;
+		case 'note':
+			shortLink += '/t'; // no trailing slash to reduce character count in tweets
+			break;
+		case 'photo':
+			shortLink += '/p/';
+			break;
+		default:
+			return '';
+	}
+
+	shortLink += newbase60.DateToSxg(new Date());
+
+	return shortLink;
+}
+
+function processFile(file) {
 	var lines = getLinesFromPost(file);
     var metadata = parseMetadata(lines['metadata']);
+	metadata['ShortLink'] = buildShortLink(metadata);
 
 	_.each(metadata, function(metadataItem) {
 		console.log('Item:' + metadataItem);
@@ -104,7 +135,7 @@ watch.createMonitor(inboxPath, watchOptions, function(monitor) {
 
 	monitor.on("created", function(file, stat) {
 		console.log("File created: " + file);
-		testFile(file);
+		processFile(file);
 	})
 	monitor.on("changed", function(file, prevStat, currentStat) {
 		console.log("File changed: " + file);

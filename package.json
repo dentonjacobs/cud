@@ -7,10 +7,10 @@
     "syndication"
   ],
   "main": "cud.js",
-  "homepage": "http://github.com/dentonjacobs/camel/",
+  "homepage": "http://github.com/dentonjacobs/cud/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dentonjacobs/camel.git"
+    "url": "https://github.com/dentonjacobs/cud.git"
   },
   "author": {
     "name": "Denton Jacobs",
@@ -18,7 +18,7 @@
   },
   "contributors": [
   ],
-  "bugs": "https://github.com/dentonjacobs/camel/issues",
+  "bugs": "https://github.com/dentonjacobs/cud/issues",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
