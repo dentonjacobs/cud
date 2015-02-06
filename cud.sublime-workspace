@@ -1,0 +1,364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"twit",
+				"twitterOptions"
+			],
+			[
+				"consu",
+				"consumer_key"
+			],
+			[
+				"wath",
+				"watchOptions"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"allP",
+				"allPostsSortedAndGrouped"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"b",
+				"text-bottom"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"fo",
+				"font-variant"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"postF",
+				"postFooterTemplate"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"fot",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "cud.js",
+			"settings":
+			{
+				"buffer_size": 833,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Tsks",
+				"Tasks: New document"
+			],
+			[
+				"Task",
+				"Tasks: New"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/dcjacobs/Dropbox/Files/cud"
+	],
+	"file_history":
+	[
+		"/C/Users/dcjacobs/Dropbox/Files/camel/camel.js",
+		"/C/Users/dcjacobs/Dropbox/Files/camel/templates/defaultTags.html",
+		"/C/Users/dcjacobs/Dropbox/Files/camel/posts/2014/07/27/01.md",
+		"/C/Users/dcjacobs/Dropbox/Files/camel/posts/2014/08/02/01.md",
+		"/C/Users/dcjacobs/Dropbox/Files/camel/posts/2014/08/06/01.md",
+		"/C/Users/dcjacobs/Dropbox/Files/camel/posts/2015/01/14/omnifocus-my-way.md",
+		"/C/Users/dcjacobs/Dropbox/Files/camel/posts/2014/08/11/01.md",
+		"/E/Denton/code/camel/posts/index.md",
+		"/E/Denton/code/camel/posts/about.md",
+		"/E/Denton/code/camel/posts/2014/09/08/01.md",
+		"/E/Denton/code/camel/posts/2014/08/11/01.md",
+		"/E/Denton/code/camel/posts/2014/08/06/01.md",
+		"/E/Denton/code/camel/posts/2014/08/02/01.md",
+		"/E/Denton/code/camel/posts/2014/07/27/01.md",
+		"/E/Denton/code/camel/posts/2014/07/18/01.md",
+		"/E/Denton/code/camel/posts/2014/07/14/02.md",
+		"/E/Denton/code/camel/posts/2014/07/11/01.md",
+		"/E/Denton/code/camel/posts/2014/07/09/01.md",
+		"/E/Denton/code/camel/templates/listFooterTemplate.html",
+		"/E/Denton/code/camel/templates/postFooter.html",
+		"/E/Denton/code/camel/templates/footer.html",
+		"/E/Denton/code/camel/posts/2014/07/14/01.md",
+		"/E/Denton/code/camel/posts/2013/03/23/ale-syndicate-a-meeting.md",
+		"/E/Denton/code/camel/posts/2014/04/04/a-vision-for-transit.md",
+		"/E/Denton/code/camel/templates/postHeader.html",
+		"/E/Denton/code/camel/templates/defaultTags.html",
+		"/E/Denton/code/camel/templates/header.html",
+		"/C/Users/dcjacobs/Dropbox/notes/todo/done.taskpaper",
+		"/C/Users/dcjacobs/Dropbox/notes/Gifts.md",
+		"/C/Users/dcjacobs/Dropbox/notes/Client Invoicing Account Master Updates.md",
+		"/C/Users/dcjacobs/Dropbox/notes/Xmas Tree Listing.md",
+		"/C/Users/dcjacobs/Dropbox/Apps/SublimeText/Data/Packages/PlainTasks/PlainTasks (Windows).sublime-settings",
+		"/C/Users/dcjacobs/Dropbox/notes/First Day At Guggenheim.md",
+		"/C/Users/dcjacobs/Dropbox/notes/todo/First Day At Guggenheim.md",
+		"/C/Users/dcjacobs/Dropbox/Apps/SublimeText/Data/Packages/User/PlainTasks.sublime-settings",
+		"/C/Users/dcjacobs/Dropbox/notes/todo/todo.taskpaper",
+		"/C/Users/dcjacobs/Dropbox/Apps/SublimeText/Data/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/dcjacobs/Dropbox/Apps/SublimeText/Data/Packages/PlainTasks/messages/Tutorial.todo",
+		"/C/Users/dcjacobs/Dropbox/Apps/SublimeText/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/dcjacobs/Dropbox/Apps/SublimeText/Data/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"marked",
+			"hr",
+			".send",
+			"parseHtml",
+			"postFooterTemplate",
+			"postHeaderTemplate",
+			"console.log",
+			"allPostsSortedAndGrouped",
+			"allPostsPaginated",
+			"redirect",
+			"generateMetadataForFile",
+			"generateHtmlAndMetadataForFile",
+			"fetchFromCache",
+			"console",
+			"loadAndSendMarkdownFile",
+			"baseRouteHandler",
+			"not in ca",
+			"allPostsPaginated",
+			"images",
+			"public",
+			"postHeaderTemplate",
+			"function postHeaderTemplate",
+			"redirect",
+			"302",
+			"relativeLink",
+			"function generateHtmlAndMetadataForFile",
+			"generateHtmlForFile",
+			"metadataMarker",
+			"performMetadataReplacements",
+			"parseHtml",
+			"postHeader"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "cud.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								833,
+								833
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "cud.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
