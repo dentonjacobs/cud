@@ -13,10 +13,10 @@ var draftsPath = './drafts/';
 var siteMetadata = {};
 
 var twitterOptions  = {
-    consumer_key:        'kRiC56bX0UA04za5aeEmGw',
-    consumer_secret:     'Kk2sJJi7TzLQJdmuh1TLtFSIf7fJOYgsdxARrPU',
-    access_token:        '15998762-dIpvCIeWZD5udRwz5gQuX1oWiToPKjZ1Ze6TPNlw8',
-    access_token_secret: 'MnOPrgxQhasLV3da0Ug0GI2WjAVzHnjnzzpnM8yO0',
+    consumer_key:        '',
+    consumer_secret:     '',
+    access_token:        '',
+    access_token_secret: '',
     callback: ''
 };
 
