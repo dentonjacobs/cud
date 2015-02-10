@@ -13,8 +13,8 @@ var metadataMarker = '@@';
 var inboxPath = './inbox/';
 var draftsPath = './drafts/';
 var postsRoot = './posts/';
-var siteMetadata = {};
 var markdown_ext = '.md';
+var siteMetadata = {};
 
 var twitterOptions  = {
     consumer_key:        process.env.TWITTER_CONSUMER_KEY,
@@ -23,15 +23,11 @@ var twitterOptions  = {
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 };
 
-var watchOptions = {
-	ignoreDotFiles: true,
-	ignoreUnreadableDir: true,
-};
-
 var twitter = new twitterAPI(twitterOptions);
 
 function postToTwitter() {
-
+	// do something
+	// but what?
 }
 
 function parseMetadata(lines) {
@@ -76,27 +72,24 @@ function getDailyPostIndex(postDate) {
 	var pathToPost = postsRoot + date.format("YYYY/MM/DD/");
 	console.log('Path to post: ' + pathToPost);
 
-	var exists = qfs.exists(pathToPost);
-	return exists.then(function(data) {
-		if (data) {
-			var fileList = qfs.listTree(pathToPost, function(name, stat) {
-				return name.endsWith(markdown_ext);
-			});
-			fileList.then(function(data){
-				var count = data.split(',').length + 1;
-				console.log('file list count: ' + count);
-				return count;
-			});
-		} else {
-			return '1';
+	var mdCount = 1; // start with 1, as the current post is n+1
+	var files = fs.readdirSync(pathToPost);
+
+	_.each(files, function (file) {
+		//console.log('file: ' + file);
+		if (file.endsWith(markdown_ext)) {
+			//console.log('Adding to count');
+			mdCount++;
 		}
 	});
+
+	return mdCount;
 }
 
 function GetDateAndShortLink(metadata) {
 	var shortLink = '';
-	//var postDate = new Date();
-	var postDate = new Date(metadata['Date']);
+	var postDate = new Date();
+	//var postDate = new Date(metadata['Date']);
 	var type = metadata['PostType'];
 
 	switch(type.toLowerCase()) {
@@ -122,29 +115,39 @@ function GetDateAndShortLink(metadata) {
 	shortLink += newbase60.DateToSxg(postDate);
 
 	var dailyPostIndex = getDailyPostIndex(postDate);
-	return dailyPostIndex.then(function(data) {
-		shortLink += dailyPostIndex;
-		return {
-			"Date": postDate,
-			"ShortLink": shortLink
-		};
-	});
+	shortLink += dailyPostIndex;
+	return {
+		"Date": postDate,
+		"ShortLink": shortLink
+	};
+}
+
+function createRedirect(file, metadata) {
+	var pathToRedirect = '.' + metadata['ShortLink'];
+	var content = "302\n" + file;
+
+	return qfs.write(pathToRedirect, content);
+}
+
+function updateMetadata(file, metadata) {
+	var dateAndShortLink = GetDateAndShortLink(metadata);
+	console.log('ShortLink added: ' + dateAndShortLink.ShortLink);
+	metadata['ShortLink'] = dateAndShortLink.ShortLink;
+	metadata['Date'] = dateAndShortLink.Date;
+
+	_.each(metadata, function(metadataItem) {
+		console.log('Item:' + metadataItem);
+	});	
 }
 
 function processFile(file) {
 	var lines = getLinesFromPost(file);
     var metadata = parseMetadata(lines['metadata']);
-	
-	var dateAndShortLink = GetDateAndShortLink(metadata);
-	dateAndShortLink.then(function(data) {
-		console.log('ShortLink added: ' + data.ShortLink);
-		metadata['ShortLink'] = data.ShortLink;
-		metadata['Date'] = data.Date;
-	});
 
-	_.each(metadata, function(metadataItem) {
-		console.log('Item:' + metadataItem);
-	});
+	console.log('Updating metadata');	
+    updateMetadata(file, metadata);
+	console.log('Creating redirect.');
+	//createRedirect(file, metadata);
 }
 
 function loadFile(file, completion) {
@@ -168,6 +171,12 @@ function init() {
 /**********************************
 * STARTUP
 **********************************/
+
+var watchOptions = {
+	ignoreDotFiles: true,
+	ignoreUnreadableDir: true,
+};
+
 watch.createMonitor(inboxPath, watchOptions, function(monitor) {
 	init();
 	console.log("Cud v" + version + " started");
