@@ -17,11 +17,10 @@ var siteMetadata = {};
 var markdown_ext = '.md';
 
 var twitterOptions  = {
-    consumer_key:        'kRiC56bX0UA04za5aeEmGw',
-    consumer_secret:     'Kk2sJJi7TzLQJdmuh1TLtFSIf7fJOYgsdxARrPU',
-    access_token:        '15998762-dIpvCIeWZD5udRwz5gQuX1oWiToPKjZ1Ze6TPNlw8',
-    access_token_secret: 'MnOPrgxQhasLV3da0Ug0GI2WjAVzHnjnzzpnM8yO0',
-    callback: 			 ''
+    consumer_key:        process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret:     process.env.TWITTER_CONSUMER_SECRET,
+    access_token:        process.env.TWITTER_ACCESS_TOKEN,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 };
 
 var watchOptions = {
