@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"def",
+				"default"
+			],
+			[
+				"new",
+				"newbase60"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
 				"twit",
 				"twitterOptions"
 			],
@@ -83,7 +95,31 @@
 			"file": "cud.js",
 			"settings":
 			{
-				"buffer_size": 833,
+				"buffer_size": 4947,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 857,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "drafts/test.md",
+			"settings":
+			{
+				"buffer_size": 236,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 150,
 				"line_ending": "Windows"
 			}
 		}
@@ -140,10 +176,12 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/dcjacobs/Dropbox/Files/cud"
+		"/C/Users/dcjacobs/Dropbox/code/cud"
 	],
 	"file_history":
 	[
+		"/C/Users/dcjacobs/Dropbox/Files/cud/.gitignore",
+		"/C/Users/dcjacobs/Dropbox/Files/cud/inbox/test.md",
 		"/C/Users/dcjacobs/Dropbox/Files/camel/camel.js",
 		"/C/Users/dcjacobs/Dropbox/Files/camel/templates/defaultTags.html",
 		"/C/Users/dcjacobs/Dropbox/Files/camel/posts/2014/07/27/01.md",
@@ -258,15 +296,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 833,
+						"buffer_size": 4947,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								833,
-								833
+								3919,
+								3919
 							]
 						],
 						"settings":
@@ -274,10 +312,96 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1499.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								651,
+								651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "drafts/test.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

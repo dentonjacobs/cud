@@ -1,5 +1,7 @@
 var _ = require('underscore');
+var moment = require('moment');
 var watch = require('watch');
+var q = require('q');
 var fs = require('fs');
 var qfs = require('q-io/fs');
 var sugar = require('sugar');
@@ -10,6 +12,7 @@ var version = require('./package.json').version;
 var metadataMarker = '@@';
 var inboxPath = './inbox/';
 var draftsPath = './drafts/';
+var postsRoot = './posts/';
 var siteMetadata = {};
 var markdown_ext = '.md';
 
@@ -69,11 +72,35 @@ function getLinesFromPost(file) {
     return {metadata: metadataLines, body: body};
 }
 
-function buildShortLink(metadata) {
+function getDailyPostIndex(postDate) {
+	var date = moment(postDate);
+	var pathToPost = postsRoot + date.format("YYYY/MM/DD/");
+	console.log('Path to post: ' + pathToPost);
+
+	var exists = qfs.exists(pathToPost);
+	return exists.then(function(data) {
+		if (data) {
+			var fileList = qfs.listTree(pathToPost, function(name, stat) {
+				return name.endsWith(markdown_ext);
+			});
+			fileList.then(function(data){
+				var count = data.split(',').length + 1;
+				console.log('file list count: ' + count);
+				return count;
+			});
+		} else {
+			return '1';
+		}
+	});
+}
+
+function GetDateAndShortLink(metadata) {
 	var shortLink = '';
+	//var postDate = new Date();
+	var postDate = new Date(metadata['Date']);
 	var type = metadata['PostType'];
 
-	switch(type) {
+	switch(type.toLowerCase()) {
 		case 'audio':
 			shortLink += '/a/';
 			break;
@@ -90,18 +117,31 @@ function buildShortLink(metadata) {
 			shortLink += '/p/';
 			break;
 		default:
-			return '';
+			throw new error('Unsupport post type:' + type);
 	}
 
-	shortLink += newbase60.DateToSxg(new Date());
+	shortLink += newbase60.DateToSxg(postDate);
 
-	return shortLink;
+	var dailyPostIndex = getDailyPostIndex(postDate);
+	return dailyPostIndex.then(function(data) {
+		shortLink += dailyPostIndex;
+		return {
+			"Date": postDate,
+			"ShortLink": shortLink
+		};
+	});
 }
 
 function processFile(file) {
 	var lines = getLinesFromPost(file);
     var metadata = parseMetadata(lines['metadata']);
-	metadata['ShortLink'] = buildShortLink(metadata);
+	
+	var dateAndShortLink = GetDateAndShortLink(metadata);
+	dateAndShortLink.then(function(data) {
+		console.log('ShortLink added: ' + data.ShortLink);
+		metadata['ShortLink'] = data.ShortLink;
+		metadata['Date'] = data.Date;
+	});
 
 	_.each(metadata, function(metadataItem) {
 		console.log('Item:' + metadataItem);
