@@ -28,3 +28,7 @@ node_modules
 .lock-wscript
 
 .dropbox
+.cud.sublime-project
+.cud.sublime-workspace
+
+env.json

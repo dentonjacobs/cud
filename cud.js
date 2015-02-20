@@ -135,6 +135,13 @@ function updateMetadata(file, metadata) {
 	metadata['ShortLink'] = dateAndShortLink.ShortLink;
 	metadata['Date'] = dateAndShortLink.Date;
 
+    var inResponseTo = metadata['InResponseToUrl'];
+	console.log('Metadata InResponseToUrl: ' + inResponseTo);
+    if (typeof(inResponseTo) != 'undefined' && inResponseTo !== '') {
+    	var domain = inResponseTo.replace('http://', '').replace('https://', '');
+    	metadata['Domain'] = domain.slice(0, (domain.indexOf('/')));
+    }
+
 	_.each(metadata, function(metadataItem) {
 		console.log('Item:' + metadataItem);
 	});	
